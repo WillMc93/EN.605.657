@@ -46,6 +46,8 @@ for (i in 2:100) {
 print(round(transitionMatrix100['need', 'thought'], 6))
 print(round(transitionMatrix100['we', 'thought'], 6))
 
+eigens <- eigen(t(transitionMatrix))$vectors[,1]
+print(eigens)
 
 
 
