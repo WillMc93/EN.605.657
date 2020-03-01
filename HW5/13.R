@@ -29,16 +29,24 @@ for(n in 1:length(paths)) {
 	}
 }
 
-print(duration5)
+print(paths)
 
 duration <- 0
 for(n in 1: length(paths)) {
 	path <- paths [[n]]
-	pathDuration <- max(which(paths[[n]]$I != 0))
-	pathProbability <- prod(paths[[n]]$P)
-	print(c(pathDuration, pathProbability))
+	pathDuration <- max(which(path$I != 0))
+	pathProbability <- prod(path$P)
 	duration <- duration + pathDuration * pathProbability
 }
 
+print(duration)
 
-print(round(duration, 3))
+secondary <- 0
+for (n in 1: length(paths)) {
+	path <- paths[[n]]
+	pathInfections <- sum(path$I) - 1
+	pathProbability <- prod(path$P)
+	secondary <- secondary + pathInfections * pathProbability
+}
+
+print(secondary)
