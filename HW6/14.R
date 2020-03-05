@@ -43,16 +43,6 @@ joint_prob <- function(path, Pi)  {
 	return(prob)
 }
 
-"
-path10 <- c(5,5,4,1)
-path11 <- c(2,3,4,1)
-#path12 <- c(1,2,3,4)
-
-print(joint_prob(path10, Pi))
-print(joint_prob(path11, Pi))
-#print(joint_prob(path12, Pi))
-"
-
 grid <- expand.grid(1:5, 1:5, 1:5, 1:5)
 total_prob = 0
 for (i in 1:length(grid[,1])) {
