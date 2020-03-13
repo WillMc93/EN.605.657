@@ -51,11 +51,11 @@ fundamental <- transitions[-5,-5]
 fundamental <- solve(diag(length(fundamental[,1])) - fundamental)
 print(fundamental)
 avg_len <- 0
-for (i in 1:(length(fundamental[,1]))) {
+for (i in 1:(length(fundamental[,1])/2)) {
 	print(i)
 	avg_len <- avg_len + sum(fundamental[i,])
 }
-avg_len <- avg_len / (length(fundamental[,1]))
+avg_len <- avg_len / (length(fundamental[,1])/2)
 print(avg_len)
 
 observations<-c("T", "A", "A", "A", "C", "T", "G", "A", "T", "T", "T")
