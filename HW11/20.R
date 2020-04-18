@@ -18,7 +18,7 @@ temp <- seq(0, 1, length=1000)
 xy <- c(temp[xy[1]],temp[xy[2]])
 
 check <- function(x, y) {
-	f <- (x^2) * (y) * ((1 - y)^2) * (1 - x - y + x*y) * ((x + y - x*y)^3)
+	f <- x^2*y*(1 - y)^2*(1 - x - y + x*y)*(x + y - x*y)^3
 	return(f)
 }
 print(check(xy[1], xy[2])== max(f))
