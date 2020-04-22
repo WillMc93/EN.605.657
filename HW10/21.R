@@ -73,10 +73,25 @@ print(round(priors[[1000]][1], 3))
 probfreq <- function(f, n, m, E, prior, threshold) {
 	post <- Posterior(f, Likelihood(f, n, m, E), prior)
 
-	return(1-sum(post[1:threshold]))
+	loc = 0
+	for (i in 1:length(f)) {
+		freq <- f[i]
+		if (freq > threshold) {
+			loc = i
+			break
+		}	
+	}
+	above_thresh <- sum(post[loc:length(post)])
+	all <- sum(post[1:length(post)])
+	prob <- above_thresh / all 
+		
+	return(prob)
 }
 n=53
 m=60
 threshold=0.81
-print(probfreq(f, n, m, E, priors[[1]], threshold))
-print(probfreq(f, n, m, E, priors[[1000]], threshold))
+
+plot(f, Posterior(f, Likelihood(f, n, m, E), priors[[1000]]))
+
+print(probfreq(f,n,m,E,priors[[1]], threshold))
+print(probfreq(f,n,m,E,priors[[1000]],threshold))
