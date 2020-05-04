@@ -63,3 +63,11 @@ for (iter in 1:100) {
 
 print(round(theta[2], 3))
 print(theta)
+
+n <- 1
+theta1 <- seq(0.01, 1, length=100)
+g <- theta1/l[1]*sum(prz[1,,]) + (1-theta1)/l[2]*sum(prz[2,,])
+plot(theta1, g, col='blue')
+
+f <- log(g)
+#plot(theta1, f, col='orange')
