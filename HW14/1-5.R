@@ -38,25 +38,19 @@ gen_graphs <- function(data, offset='', wd=graph_d) {
 mushroomData1 <- mushroomData[1:7]
 mushroomData2 <- mushroomData[1:8]
 
-#gen_graphs(mushroomData1)
-#gen_graphs(mushroomData2, offset='1')
+structhc1 <- hc(mushroomData1)
+structgs1 <- gs(mushroomData1)
+structa1 <- aracne(mushroomData1)
 
+structhc2 <- hc(mushroomData2)
+structgs2 <- gs(mushroomData2)
+structa2 <- aracne(mushroomData2)
 
-# Question 7
-structure <- hc(mushroomData2)
-parameters <- bn.fit(structure, mushroomData2)
+graphviz.plot(structhc1)
+graphviz.plot(structhc2)
 
-# Question 11
-structure <- hc(mushroomData1)
-score <- bnlearn::score(structure, mushroomData1)
-print(score)
+graphviz.plot(structgs1)
+graphviz.plot(structgs2)
 
-# Question 12
-edgeReversedStructure <- reverse.arc(structure, 'edible', 'odor')
-score <- bnlearn::score(edgeReversedStructure, mushroomData1)
-print(score)
-
-# Question 13
-edgeReversedStructure <- reverse.arc(edgeReversedStructure, 'bruises', 'gill_attachment')
-score <- bnlearn::score(edgeReversedStructure, mushroomData1)
-print(score)
+graphviz.plot(structa1)
+graphviz.plot(structa2)
