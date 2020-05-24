@@ -7,7 +7,7 @@ output <- unlist(strsplit(observations, ''))
 
 states <- c(1, 2, 3)
 symbols <- unique(output)
-
+set.seed(13)
 
 mul = 0.9
 set_thing <- function(p, multiplyer=mul) {

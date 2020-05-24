@@ -46,17 +46,20 @@ mushroomData2 <- mushroomData[1:8]
 structure <- hc(mushroomData2)
 parameters <- bn.fit(structure, mushroomData2)
 
+print(parameters)
+print(bn.fit(structure, mushroomData2))
+
 # Question 11
 structure <- hc(mushroomData1)
 score <- bnlearn::score(structure, mushroomData1)
-print(score)
+#print(score)
 
 # Question 12
 edgeReversedStructure <- reverse.arc(structure, 'edible', 'odor')
 score <- bnlearn::score(edgeReversedStructure, mushroomData1)
-print(score)
+#print(score)
 
 # Question 13
 edgeReversedStructure <- reverse.arc(edgeReversedStructure, 'bruises', 'gill_attachment')
 score <- bnlearn::score(edgeReversedStructure, mushroomData1)
-print(score)
+#print(score)
