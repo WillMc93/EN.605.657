@@ -2,4 +2,4 @@
 JHU Statistics for Bioinformatics Spring 2020
 
 
-No guarantee on grades. Please be careful if you use for reference.
+Please be careful if you use for reference.
